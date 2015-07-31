@@ -1,10 +1,10 @@
 {
-  "anatomy": {
-    "title": "Anatomy",
+  "supeposter-slider": {
+    "title": "supeposter-slider",
     "icon_class": "supeposter-slider"
   },
-    "theory": {
-    "title": "Theory",
+    "superposter-livetype": {
+    "title": "superposter-livetype",
     "icon_class": "superposter-livetype"
   }
 }
