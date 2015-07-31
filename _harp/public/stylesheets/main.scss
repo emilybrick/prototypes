@@ -1,0 +1,416 @@
+@import "bourbon/bourbon";
+@import "_navigation";
+@import "_sciencepages";
+@import "_facespages";
+@import "fonts";
+
+$white: white;
+$gray: #aaaaaa;
+$dark-gray: #575e64;
+$light-blue: #66ccff;
+$dark-blue: #3e688d;
+$lavender: #62b2f6;
+$light-teal: #95e2e6;
+$light-gray: #b9bec3;
+$lightest-gray: #d8d8d8;
+$bg-color: #dee9de;
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background: #dee9de;
+    color: #1f2021;
+    margin: 0;
+    font-family: "proxima-nova";
+}
+
+.content {
+    margin-left: 220px;
+    @include clearfix;
+}
+
+/* LANDING PAGE STYLES */
+.homewrapper, .sciencewrapper, .faceswrapper, .conclusionwrapper {
+    width: auto;
+    display: block;
+    margin: 5% 2% 2% 9%;
+    position: relative;
+    @include clearfix;
+}
+
+.conclusionwrapper{
+    margin:1% 2% 2% 9%;
+}
+
+.sciencewrapper {
+    width: 900px;
+}
+
+p {
+    color: shade($light-blue, 20%);
+    font-weight: 400;
+    position: relative;
+    letter-spacing: 1.25px;
+    & strong {
+        // color: $dark-blue;
+
+    }
+    .homewrapper & {
+        padding-right: 50px;
+    }
+}
+
+h3 {
+    .conclusionwrapper & {
+        color: $dark-blue;
+        font-weight: 400;
+        letter-spacing: 1px;
+        padding-bottom: 20px;
+    }
+}
+
+h1 {
+    &.face, &.science {
+        font-size: 135px;
+        font-weight: 800;
+        display: inline;
+        text-transform: uppercase;
+    }
+    &.face {
+        color: $dark-gray;
+    }
+    &.science {
+        color: $light-gray;
+    }
+}
+
+.buttoncontainer {
+    display: block;
+    margin-top: 50px;
+}
+
+.explorelarge, .learnlarge {
+    display: inline;
+    & a {
+        display: inline;
+        background: $light-blue;
+        padding: 18px 44px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 16px;
+        color: #F3F3F3;
+        margin-right: 30px;
+        letter-spacing: 2px;
+        border: 5px solid $light-blue;
+        &:hover {
+            @include transition(all 0.15s ease-in-out);
+            border: 5px solid tint($lavender, 10%);
+        }
+    }
+}
+
+/* SCIENCE LANDING PAGE STYLES */
+
+.learnnav {
+    float: left;
+    @include clearfix;
+}
+
+h1 {
+    &.dontjudge, &.whatyousee {
+        font-size: 120px;
+        display: block;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 130px;
+        &.dont, &.what {
+            color: tint($dark-gray, 30%);
+            font-weight:700;
+        }
+        &.judge, &.you {
+            color: tint($gray, 30%);
+            font-weight:700;
+        }
+        &.me, &.see {
+            color: $light-teal;
+            font-weight:700
+        }
+    }
+}
+
+.youwill {
+    color: #56B6E4;
+    font-weight: 400;
+    font-size: 16px;
+    position: relative;
+    top: 20px;
+    &:after {
+        content: "";
+        display: block;
+        background: url("img/arrow.png");
+        width: 215px;
+        height: 26px;
+        margin-top: 5px;
+    }
+}
+
+.sciencebuttons {
+    float: right;
+    width: 180px;
+    height: 200px;
+    text-align: center;
+    margin-top: 265px;
+    @include clearfix;
+    & a {
+        cursor: pointer;
+    }
+    & p {
+        display: block;
+        padding-top: 30px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $lavender;
+    }
+    &.circle {
+        display: block;
+    }
+}
+
+.circle {
+    background-color: $light-blue;
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    background-color: #66ccff;
+    margin: 0 auto;
+    &:hover {
+        background: tint($lavender, 10%);
+        @include transition(all 0.15s ease-in-out);
+    }
+    i {
+        line-height: 110px;
+        color: white;
+        font-size: 60px;
+    }
+}
+
+/* FACES LANDING PAGE STYLES */
+
+.facesbuttons {
+    float: left;
+    margin-top: 20px;
+    padding-left: 200px;
+    li {
+        a {
+            margin-bottom: 26px;
+            padding: 15px;
+            display: block;
+            background: $bg-color;
+            border: 5px solid $light-gray;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-align: center;
+            color: $light-gray;
+            &:hover {
+                color: shade($lavender, 10%);
+                @include transition(all 0.15s ease-in-out);
+                border: 5px solid shade($lavender, 10%);
+            }
+        }
+    }
+}
+
+/* CONCLUSION STYLES */
+
+.conclusionheader {
+    font-size: 64px;
+    text-transform: uppercase;
+    color: $lavender;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    margin-bottom: 20px;
+}
+
+.conclusioncontainer {
+    display: block;
+    width: 100%;
+    height: auto;
+    @include clearfix;
+}
+
+.conclusion-face {
+    width: 33%;
+    height: auto;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    color: rgba($dark-blue, .5);
+    &:hover {
+        color:rgba($dark-blue, 1);
+        @include transition(all 0.2s ease-in-out);
+    }
+        &:after {
+            content: "";
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            border: 6px solid $light-teal;
+        }
+    span {
+        display:block;
+        position: absolute;
+        font-size:14px;
+        font-weight:400;
+        padding:20px 20px 0 5px;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        line-height: 0p;
+
+    }
+    &.one  {}
+    &.two:after {
+        border-left-width: 0;
+        border-right-width: 0;
+    }
+    &.three {}
+}
+
+
+
+// COLOPHON LIGHTBOX //
+
+
+.lightbox{
+        background: rgba(white, 0.9);
+        bottom: 0;
+        cursor: default;
+        display: none;
+        left: 0;
+        overflow: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 998;
+}
+
+.bg {
+  position:absolute;
+  display:block;
+  z-index: 998;
+  width: 100%;
+  height: 100%;
+  background: white;
+    opacity:.9;
+}
+
+.colophon-container{
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 998;
+    padding:60px;
+    p {
+        font-size:12px;
+        color:$dark-gray;
+}
+    h3{
+        color:$dark-blue;
+    }
+    h2 {
+        color:$dark-gray;
+        font-size: 32px;
+        margin-top: 0;
+    }
+
+}
+
+
+#colophonheader {
+    color: #414141;
+    font-weight: bold;
+    font-size:3.9em;
+    margin-left:-6px;
+}
+
+
+.colophon-nav {
+    position:relative;
+    top:83px;
+    @include clearfix;
+    float:right;
+    z-index:997;
+    a{
+        display: inline;
+        padding: 18px 44px;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 16px;
+        color: $lavender;
+        margin-right: 30px;
+        letter-spacing: 2px;
+        &:hover {
+                @include transition(all 0.15s ease-in-out);
+                color: $dark-gray;
+            }
+        i {
+            font-size: 30px;
+            position: relative;
+            top: 8px;
+            padding-right: 7px;
+        }
+
+    }
+}
+
+
+.citeClose {
+    height: 43px;
+    z-index: 999;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    background-color: white;
+    text-align: center;
+    line-height: 19px;
+    padding: 10px 20px 10px 20px;
+    font-size: 13px;
+    background: $dark-blue;
+    position: absolute;
+    top: 15px;
+    border: 3px solid $dark-blue;
+    right: 15px;
+    text-transform: uppercase;
+    }
+
+.citeClose:hover{
+    border: 3px solid shade($light-blue, 30%);
+    color:white;
+
+}
+
+
+
+.gotonext {
+        position:relative;
+        margin-top:5%;
+        padding-bottom:30px;
+        a{
+            text-transform:uppercase;
+            font-weight:600;
+            color:$dark-blue;
+        }
+}
