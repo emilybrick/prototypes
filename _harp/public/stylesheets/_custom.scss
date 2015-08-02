@@ -1,0 +1,86 @@
+//custom css for livetype demo
+
+.livetype_img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+.hero-image {
+  position: relative;
+}
+
+.hero-caption {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  font-size: 3em;
+  font-weight: bold;
+  color: #fff;
+  outline: 2.5px dashed transparent;
+  outline-offset: 0.2em;
+  transition: outline-color 0.2s ease-in-out;
+}
+.hero-caption:focus {
+  outline-color: #000;
+}
+@media screen and (max-width: 640px) {
+  .hero-caption {
+    color: #222;
+    font-size: 48px;
+    margin: 0px 20px;
+    position: relative;
+    left: 0;
+  }
+}
+
+
+//sticky header js mockup and sidebar
+
+.sidebar {
+  position: absolute;
+  top: 182px;
+  right: 0;
+  z-index: 998;
+}
+
+.sticky-header {
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+
+// sticky
+.fixedsticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+/* When position: sticky is supported but native behavior is ignored */
+.fixedsticky-withoutfixedfixed .fixedsticky-off,
+.fixed-supported .fixedsticky-off {
+  position: static;
+}
+.fixedsticky-withoutfixedfixed .fixedsticky-on,
+.fixed-supported .fixedsticky-on {
+  position: fixed;
+}
+.fixedsticky-dummy {
+  display: none;
+}
+.fixedsticky-on + .fixedsticky-dummy {
+  display: block;
+}
+
+
+
+
+.bf-logo {
+  width: 200px;
+}

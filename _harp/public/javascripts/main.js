@@ -77,3 +77,25 @@ $overlaytoggle.on('mouseout', function(){
 });
 
 
+
+// this is the livetype flowtype codenpen demo
+
+$(document).on('click', '[data-editable]', function(e) {
+  var $caption = $(e.currentTarget);
+  if (!$caption.attr('contenteditable')) {
+    $caption.attr('contenteditable', '');
+    $caption.focus();
+  }
+});
+
+$(document).on('blur', '[data-editable]', function(e) {
+  var $caption = $(e.currentTarget);
+  $caption.removeAttr('contenteditable');
+});
+
+$('figure').flowtype( {
+  minimum: 640
+});
+
+
+$('.fixedsticky').fixedsticky();

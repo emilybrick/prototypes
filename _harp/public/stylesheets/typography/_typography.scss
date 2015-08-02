@@ -1,0 +1,198 @@
+//
+// Typography Base Styles
+// --------------------------------------------------
+
+html {
+  font-size: 16px;
+  font-family: "Proxima-Nova", Helvetica, Arial, sans-serif; // This is just for reference
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-1,
+.text-2,
+.text-3,
+.text-4,
+.text-5,
+.text-6 {
+  line-height: $line-height;
+}
+
+h1 {
+  font-size: $text-1;
+}
+
+h2 {
+  font-size: $text-2;
+}
+
+h3 {
+  font-size: $text-3;
+}
+
+h4 {
+  font-size: $text-4;
+}
+
+h5 {
+  font-size: $text-5;
+}
+
+h6 {
+  font-size: $text-6;
+}
+
+// wouldn't it make more sense to @extend .link-blue; here? 
+a {
+  text-decoration: none; 
+  color: $text-blue;
+
+  &:hover {
+    color: darken($text-blue, 20%);
+    transition: color .3s ease 0s;
+  }
+}
+
+// Text Size Classes + Responsive Prefixes
+@include generate-breakpoint-prefixes {
+  &text-1 { font-size: $text-1; }
+  &text-2 { font-size: $text-2; }
+  &text-3 { font-size: $text-3; }
+  &text-4 { font-size: $text-4; }
+  &text-5 { font-size: $text-5; }
+  &text-6 { font-size: $text-6; }
+}
+
+// Typography Emphasis and Styling
+
+.regular,
+.normal {
+  font-weight: $regular;
+}
+
+strong,
+b,
+.bold {
+  font-weight: $bold;
+}
+
+em,
+i,
+.italic {
+  font-style: italic;
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+// Text Alignment + Responsive Prefixes
+
+@include generate-breakpoint-prefixes {
+  &text-left { text-align: left; }
+  &text-center { text-align: center; }
+  &text-right { text-align: right; }
+  &text-justify { text-align: justify; }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.decoration-none {
+  text-decoration: none;
+}
+
+.decoration-underline {
+  text-decoration: underline;
+}
+
+.decoration-line-through {
+  text-decoration: line-through;
+}
+
+// Typeface Classes
+
+.slab {
+  font-family: "Caponi-Slab-Semibold";
+  line-height: 1.1;
+  // Needed b/c chrome still needs prefix
+  // scss-lint:disable VendorPrefix
+  -webkit-font-feature-settings: "liga", "kern";
+  font-feature-settings: "liga", "kern";
+  // scss-lint:enable VendorPrefix
+  &.bold {
+    font-family: "Caponi-Slab-Semibold";
+    font-weight: normal;
+  }
+
+  &.italic {
+    font-family: "Caponi-Slab-Semibold";
+  }
+}
+
+
+// Caponi should never be an h6 or .type-6, these classes disallow that from happening (type will default to Proxima)
+
+// scss-lint:disable QualifyingElement
+.slab h6,
+// scss-lint:enable QualifyingElement
+h6.slab,
+.text-6 .slab,
+.slab.text-6 {
+  font-family: "Proxima-Nova";
+  font-weight: normal;
+}
+
+// Ordered and unordered list, list items are block level
+
+ol,
+ul {
+  padding-left: $space-4;
+}
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+
+.list-unstyled {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+// Link Styles
+
+.link-blue {
+  color: $text-blue;
+
+  &:hover {
+    color: darken($text-blue, 20%);
+  }
+}
+
+.link-gray {
+  color: $text-gray;
+
+  &:hover {
+    color: $text-blue;
+  }
+}
+
+.link-gray--lighter {
+  color: $text-gray--lightest;
+
+  &:hover {
+    color: $text-gray;
+  }
+}
+
