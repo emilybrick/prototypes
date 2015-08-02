@@ -20,20 +20,22 @@ figure {
   font-size: 3em;
   font-weight: bold;
   color: #fff;
-  outline: 2.5px dashed transparent;
+  outline: 3.5px dashed transparent;
   outline-offset: 0.2em;
   transition: outline-color 0.2s ease-in-out;
 }
 .hero-caption:focus {
-  outline-color: #000;
+  outline-color: #e32;
 }
 @media screen and (max-width: 640px) {
   .hero-caption {
     color: #222;
-    font-size: 48px;
-    margin: 0px 20px;
+    font-size: 42px;
+    line-height: 50px;
+    margin: 0 24px;
     position: relative;
     left: 0;
+    top: 10px;
   }
 }
 
@@ -42,7 +44,7 @@ figure {
 
 .sidebar {
   position: absolute;
-  top: 182px;
+  top: 200px;
   right: 0;
   z-index: 998;
 }
