@@ -1,5 +1,7 @@
-////////////////////////////////////////////////////
-//////////////// LIVE TEXT DEMO
+/// JS For Live Text, Input & Textarea
+/// -----------------------------
+/// leave notes here
+/// -----------------------------
 
 $(document).on('click', 'a[href="#"]', function(e){
   e.preventDefault();
@@ -81,8 +83,11 @@ $overlaytoggle.on('mouseout', function(){
 
 
 
-////////////////////////////////////////////////////
-//////////////// FLOW TYPE FOR LIVE TEXT DEMO 
+
+/// Flowtype JS for Live Text Over Image (in CMS)
+/// -----------------------------
+/// leave notes here
+/// -----------------------------
 
 $(document).on('click', '[data-editable]', function(e) {
   var $caption = $(e.currentTarget);
@@ -102,16 +107,21 @@ $('figure').flowtype( {
 });
 
 
-////////////////////////////////////////////////////
-//////////////// FIXED STICKY HEADER FOR CMS DEMO
+
+/// Fixed Sticky Header for CMS
+/// -----------------------------
+/// leave notes here
+/// -----------------------------
 
 $('.fixedsticky').fixedsticky();
 
 
 
 
-////////////////////////////////////////////////////
-//////////////// SLIDE TO PUBLISH BUTTON DEMO
+/// Slide to Publish Demo JS
+/// -----------------------------
+/// leave notes here
+/// -----------------------------
 
 
 var sliderCompleteText = "Published";

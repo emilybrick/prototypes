@@ -1,4 +1,5 @@
-//custom css for livetype demo
+/// Custom CSS for Live Text Demo
+/// -----------------------------
 
 .livetype_img {
   max-width: 100%;
@@ -41,7 +42,8 @@ figure {
 }
 
 
-//sticky header js mockup and sidebar
+/// Sticky Header for CMS Protos
+/// -----------------------------
 
 .sidebar {
   position: absolute;
@@ -57,7 +59,9 @@ figure {
 }
 
 
-// sticky
+/// Sticky Header CSS for JS
+/// -----------------------------
+
 .fixedsticky {
   position: -webkit-sticky;
   position: -moz-sticky;
@@ -89,7 +93,9 @@ figure {
 }
 
 
-// slider
+/// Slider for Slide to Publish Button
+/// -----------------------------
+
 
 .publish-slider {
   position: relative;
