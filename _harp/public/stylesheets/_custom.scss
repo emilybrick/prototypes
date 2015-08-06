@@ -93,6 +93,7 @@ figure {
 
 .publish-slider {
   position: relative;
+  top: 1px;
   display: inline-block;
   border: 1px solid $fill-blue;
   border-radius: 3px;
@@ -116,9 +117,15 @@ figure {
   @extend .button;
   @extend .button--primary;
   position: absolute;
+  background-color: #3E9BF7 !important; //important to override js
+  border: 1px solid $fill-blue !important; //important to override js
   top: -1px;
   left: -1px;
   width: 2.625rem; // $button-height
+  &:hover,
+  &:active {
+    background-color: #3E9BF7 !important; //important to override js
+  }
 }
 
 .publish-slider__grow {
