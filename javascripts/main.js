@@ -1,5 +1,7 @@
-////////////////////////////////////////////////////
-//////////////// LIVE TEXT DEMO
+/// JS For Live Text, Input & Textarea
+/// -----------------------------
+/// leave notes here
+/// -----------------------------
 
 $(document).on('click', 'a[href="#"]', function(e){
   e.preventDefault();
@@ -81,8 +83,11 @@ $overlaytoggle.on('mouseout', function(){
 
 
 
-////////////////////////////////////////////////////
-//////////////// FLOW TYPE FOR LIVE TEXT DEMO 
+
+/// Flowtype JS for Live Text Over Image (in CMS)
+/// -----------------------------
+/// leave notes here
+/// -----------------------------
 
 $(document).on('click', '[data-editable]', function(e) {
   var $caption = $(e.currentTarget);
@@ -102,44 +107,70 @@ $('figure').flowtype( {
 });
 
 
-////////////////////////////////////////////////////
-//////////////// FIXED STICKY HEADER FOR CMS DEMO
+
+/// Fixed Sticky Header for CMS
+/// -----------------------------
+/// leave notes here
+/// -----------------------------
 
 $('.fixedsticky').fixedsticky();
 
 
 
 
-////////////////////////////////////////////////////
-//////////////// SLIDE TO PUBLISH BUTTON DEMO
+/// Slide to Publish Demo JS
+/// -----------------------------
+/// leave notes here
+/// -----------------------------
 
-// Helper function
-var update_handle_track_pos = function(slider, ui_handle_pos) {
-  var handle_track_xoffset = -((ui_handle_pos/100) * slider.clientWidth);
-  $(slider).find(".handle-track").css("left", handle_track_xoffset);
-  var slider_range_inverse_width = (100 - ui_handle_pos) + "%";
-  $(slider).find(".slider-range-inverse").css("width", slider_range_inverse_width);
-}
 
-// Init slider
-$("#js-slider").slider({
-  range: "min",
-  max: 100,
-  value: 50,
-  create: function(event, ui) {
-    var slider = $(event.target)
+var sliderCompleteText = "Published";
 
-    // Append the slider with an inverse range
-    slider.prepend('<div class="slider-range-inverse"></div>');
-     
-    // Set initial dimensions
-    slider.find(".handle-track").css("width", event.target.clientWidth);
-    
-    // Set initial position for tracks
-    update_handle_track_pos(event.target, $(this).slider("value"));
-  },  
-  slide: function(event, ui) {
-    // Update position of tracks
-    update_handle_track_pos(event.target, ui.value)
+var $slider = $('.publish-slider');
+var $sliderText = $slider.find('.publish-slider__text');
+var $sliderHandle = $slider.find('.publish-slider__handle');
+var $sliderGrow = $slider.find('.publish-slider__grow');
+
+new Dragdealer($slider.get(0), {
+  steps: 1,
+  handleClass: 'publish-slider__handle',
+  animationCallback: function(x, y) {
+    if (!this.disabled) {
+      // x scales from 0 -> 1 as you slide
+      // subtractng by 1 reverses the number
+      // so the text gets more transparent as you slide
+      $sliderText.css('opacity', 1 - x);
+      $sliderGrow.css('width', x * 100 + "%");
+
+    }
+  },
+  callback: function(x, y) {
+
+    // only publish if > 95% of the way to the end
+    if (x > 0.95) {
+
+      $sliderHandle.hide();
+      $sliderGrow.hide();
+      $sliderText.text(sliderCompleteText);
+      $slider.addClass('publish-slider--published');
+      $sliderText.css('opacity', 1);
+      this.disable();
+
+    } else if (x > 0) {
+
+      // Animate back to 0 if you let go any time before 95%
+      this.setStep(0);
+
+    }
   }
 });
+
+
+
+
+
+
+
+
+
+
