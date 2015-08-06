@@ -1,3 +1,6 @@
+////////////////////////////////////////////////////
+//////////////// LIVE TEXT DEMO
+
 $(document).on('click', 'a[href="#"]', function(e){
   e.preventDefault();
 });
@@ -78,7 +81,8 @@ $overlaytoggle.on('mouseout', function(){
 
 
 
-// this is the livetype flowtype codenpen demo
+////////////////////////////////////////////////////
+//////////////// FLOW TYPE FOR LIVE TEXT DEMO 
 
 $(document).on('click', '[data-editable]', function(e) {
   var $caption = $(e.currentTarget);
@@ -98,4 +102,65 @@ $('figure').flowtype( {
 });
 
 
+////////////////////////////////////////////////////
+//////////////// FIXED STICKY HEADER FOR CMS DEMO
+
 $('.fixedsticky').fixedsticky();
+
+
+
+
+////////////////////////////////////////////////////
+//////////////// SLIDE TO PUBLISH BUTTON DEMO
+
+
+var sliderCompleteText = "Published";
+
+var $slider = $('.publish-slider');
+var $sliderText = $slider.find('.publish-slider__text');
+var $sliderHandle = $slider.find('.publish-slider__handle');
+var $sliderGrow = $slider.find('.publish-slider__grow');
+
+new Dragdealer($slider.get(0), {
+  steps: 1,
+  handleClass: 'publish-slider__handle',
+  animationCallback: function(x, y) {
+    if (!this.disabled) {
+      // x scales from 0 -> 1 as you slide
+      // subtractng by 1 reverses the number
+      // so the text gets more transparent as you slide
+      $sliderText.css('opacity', 1 - x);
+      $sliderGrow.css('width', x * 100 + "%");
+
+    }
+  },
+  callback: function(x, y) {
+
+    // only publish if > 95% of the way to the end
+    if (x > 0.95) {
+
+      $sliderHandle.hide();
+      $sliderGrow.hide();
+      $sliderText.text(sliderCompleteText);
+      $slider.addClass('publish-slider--published');
+      $sliderText.css('opacity', 1);
+      this.disable();
+
+    } else if (x > 0) {
+
+      // Animate back to 0 if you let go any time before 95%
+      this.setStep(0);
+
+    }
+  }
+});
+
+
+
+
+
+
+
+
+
+

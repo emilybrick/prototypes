@@ -87,3 +87,46 @@ figure {
 .bf-logo {
   width: 200px;
 }
+
+
+// slider
+
+.publish-slider {
+  position: relative;
+  display: inline-block;
+  border: 1px solid $fill-blue;
+  border-radius: 3px;
+  font-size: $text-4;
+  width: 200px;
+  text-align: center;
+  height: 2.625rem;
+  line-height: 2.625rem;
+  color: $text-blue;
+  opacity: 1;
+  &.publish-slider--published {
+    color: $text-white;
+    background-color: $fill-blue;
+    border-color: $fill-blue;
+  }
+}
+
+.publish-slider__text {}
+
+.publish-slider__handle {
+  @extend .button;
+  @extend .button--primary;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 2.625rem; // $button-height
+}
+
+.publish-slider__grow {
+  background-color: $fill-blue;
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
