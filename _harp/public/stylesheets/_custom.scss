@@ -143,3 +143,43 @@ figure {
   bottom: 0;
 }
 
+
+
+// superposter old button styling
+
+.sp-buttons--legacy {
+  background-color: #aaa;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  padding: 11px 30px;
+  &.save {
+    background-color: $fill-blue;
+    border-radius: 0px;
+    &:hover {
+      color: $text-white;
+    }
+  }
+}
+
+
+.publish-slider.sp-buttons--legacy {
+  padding: 0px;
+  top: 0px;
+  background-color: $fill-blue;
+
+  .publish-slider__grow {
+    background-color: #3E9BF7;
+  }
+
+  .publish-slider__handle {
+    border-radius:0 !important;
+    margin-top: 1px;
+  }
+}
+
+
+.sp-buttons--legacy {
+  &:hover {
+    color: $text-white;  }
+}
