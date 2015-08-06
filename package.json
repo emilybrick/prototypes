@@ -1,0 +1,24 @@
+{
+  "name": "prototypes",
+  "version": "1.0.0",
+  "description": "Emily Brick's protoype projects",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/harp/bin/harp server _harp",
+    "compile": "node node_modules/harp/bin/harp compile _harp ./www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emilybrick/prototypes.git"
+  },
+  "author": "Emily Brick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emilybrick/prototypes/issues"
+  },
+  "homepage": "https://github.com/emilybrick/prototypes",
+  "dependencies": {
+    "harp": "^0.17.0"
+  }
+}
