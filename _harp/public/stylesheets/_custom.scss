@@ -127,7 +127,7 @@ figure {
   border: 1px solid $fill-blue !important; //important to override js
   top: -1px;
   left: -1px;
-  width: 2.625rem; // $button-height
+  width: 2rem; // $button-height
   &:hover,
   &:active {
     background-color: #3E9BF7 !important; //important to override js
@@ -167,7 +167,7 @@ figure {
   padding: 0px;
   top: 0px;
   background-color: $fill-blue;
-  
+
   .publish-slider__handle {
     border-radius:0 !important;
     margin-top: 1px;
